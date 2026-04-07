@@ -85,3 +85,5 @@ jobs:
   alldone:
     needs: [lint, test, build, deploy]
     uses: ./.github/workflows/reusable.yml
+    with:
+      name: "GitHub Actions tested by Himanshu"

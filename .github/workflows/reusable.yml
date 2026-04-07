@@ -1,9 +1,14 @@
 name: Resusable Demo
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: 'A name parameter to greet'
+        required: true
+        type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Just an output
-        run: echo "Hello World"
-       
+        run: echo "Hello ${{ inputs.name }}"
